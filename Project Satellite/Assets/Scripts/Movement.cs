@@ -6,9 +6,11 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     // Start is called before the first frame update
+    Rigidbody rb;
+    [SerializeField] float mainThrust=100f;
     void Start()
     {
-       
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -22,7 +24,7 @@ public class Movement : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space))
         {
-            Debug.Log("Thrusting -Upward");
+            rb.AddRelativeForce(Vector3.up*mainThrust*Time.deltaTime);
         }
        
     }
