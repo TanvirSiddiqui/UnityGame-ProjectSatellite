@@ -44,6 +44,8 @@ public class Movement : MonoBehaviour
 
      void ApplyRotation(float rotateThisFrame)
     {
+        rb.freezeRotation = true; // freezing rotation so that we can manually roate
         transform.Rotate(Vector3.forward*rotateThisFrame*Time.deltaTime);
+        rb.freezeRotation = false;  // unfreezing rotation so that the physics system can take over
     }
 }
