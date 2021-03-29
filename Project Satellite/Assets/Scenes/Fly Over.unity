@@ -139,6 +139,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c42af070097704d418790d4fee7c655f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelLoadDelay: 2
+  success: {fileID: 8300000, guid: 8e99d902cb405fa46999456c5eae65f0, type: 3}
+  crash: {fileID: 8300000, guid: 7b053d7da8aa5f241a744b96feb58304, type: 3}
 --- !u!82 &592436582
 AudioSource:
   m_ObjectHideFlags: 0
@@ -149,7 +152,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: f63e816715fc10e47b1c9418d2a4e45e, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -509,6 +512,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rocket
       objectReference: {fileID: 0}
+    - target: {fileID: 1605652080386930880, guid: 42a364c2890b7344fac61e09c2672579,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1605652080386930880, guid: 42a364c2890b7344fac61e09c2672579,
+        type: 3}
+      propertyPath: EngineAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: f63e816715fc10e47b1c9418d2a4e45e, type: 3}
     - target: {fileID: 1605652080386930881, guid: 42a364c2890b7344fac61e09c2672579,
         type: 3}
       propertyPath: m_RootOrder

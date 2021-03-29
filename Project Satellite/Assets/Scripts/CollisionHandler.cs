@@ -5,7 +5,16 @@ using UnityEngine.SceneManagement;
 public class CollisionHandler : MonoBehaviour
 {
     [SerializeField] float levelLoadDelay = 2f;
-     void OnCollisionEnter(Collision other)
+    [SerializeField] AudioClip success;
+    [SerializeField] AudioClip crash;
+
+    AudioSource audioSource;
+
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+    void OnCollisionEnter(Collision other)
     {
         switch (other.gameObject.tag)
         {
@@ -27,8 +36,8 @@ public class CollisionHandler : MonoBehaviour
 
      void StartSuccessSequence()
     {
-        // todo add SFX upon crash
-        // todo add particle effect ipon crash
+        audioSource.PlayOneShot(success);
+        // todo add particle effect upon success
         GetComponent<Movement>().enabled = false;
         Invoke("LoadNextLevel", levelLoadDelay);
 
@@ -37,7 +46,7 @@ public class CollisionHandler : MonoBehaviour
     void StartCrashSequence()
      {
 
-        // todo add SFX upon crash
+        audioSource.PlayOneShot(crash);
         // todo add particle effect ipon crash
          GetComponent<Movement>().enabled = false;
          Invoke("ReloadLevel", levelLoadDelay);
